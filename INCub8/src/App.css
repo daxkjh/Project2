@@ -1,0 +1,53 @@
+.App {
+  position: relative;
+}
+
+body {
+  background-color: gold;
+}
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.Navbar{
+
+height: 15%;
+background-color: white;
+}
+
+.nav{
+  display: inline-flex;
+  margin: 3%;
+}
+
+.Logo{
+  width: 10%;
+  left: 0;
+}
+
+.searchInput{
+  width: 20%;
+  height: 25px;
+  margin-left: 25px;
+  margin-right: 20px;
+}
+
+.homeimage1{
+  margin: 20px;
+}
+
+.image1text{
+  display: inline-block;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  /* transform: translate(-50%, -50%); */
+}
+
+.homestartbutton{
+  background-color: white;
+  padding: 10px;
+  width: 20%;
+
+}
