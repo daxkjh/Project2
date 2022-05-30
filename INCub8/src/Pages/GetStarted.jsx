@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Outlet } from "react-router-dom"
 import BizCheck from "../Components/BizCheck"
 import Navbar from "../Components/Navbar"
+import ProgressBar from "../Components/ProgressBar"
 
 const GetStarted =()=>{
 
@@ -16,6 +17,7 @@ console.log(bizName)
     return(
         <div className="GetStarted">
             <Navbar />
+            {/* <ProgressBar /> */}
             <h1>Your Start-up journey begins here</h1>
             <h2>Use our business checker to see if your ideal company name is available</h2>
             <form onSubmit={handleSubmit}>

@@ -1,29 +1,38 @@
 .App {
   position: relative;
+  max-width: 100%;
+  min-width: 1000px;
 }
 
 body {
   background-color: gold;
 }
+a{
+  text-decoration: none;
+  color: whitesmoke
+}
+
 button {
   font-size: calc(10px + 2vmin);
 }
 
 .Navbar{
+position: relative;
+top:0px;
+color: White;
+width: 100%;
+height:150px;
 
-height: 15%;
-background-color: white;
 }
 
 .nav{
-  display: inline-flex;
-  margin: 3%;
+  position: relative;
+  display: inline;
+  top: -50px;
+  margin-left: 50px;
+  font-size: larger;
 }
 
-.Logo{
-  width: 10%;
-  left: 0;
-}
 
 .searchInput{
   width: 20%;
@@ -38,16 +47,20 @@ background-color: white;
 
 .image1text{
   display: inline-block;
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  /* transform: translate(-50%, -50%); */
+  position: relative;
+  width: 25%;
+  padding: 25px;
+  top: -100px;
+ 
 }
 
 .homestartbutton{
-  background-color: white;
+  background-color: black;
   padding: 10px;
-  width: 20%;
+  width: 85px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
 
 }
+
