@@ -18,11 +18,15 @@ console.log(bizName)
         <div className="GetStarted">
             <Navbar />
             {/* <ProgressBar /> */}
+            <img
+          src="https://i.imgur.com/05Hw3If.jpg"
+          style={{ borderRadius: "50px", margin: '25px'}}
+        />
             <h1>Your Start-up journey begins here</h1>
             <h2>Use our business checker to see if your ideal company name is available</h2>
             <form onSubmit={handleSubmit}>
             <input className="searchInput" type="text" id="bizname" name="bizname" placeholder="What do you have in mind?" />
-            <button>Check Now!</button>
+            <button style={{borderRadius: '50px', padding: '10px'}}>Check Now!</button>
             </form>
             <Outlet/>
             <BizCheck bizName={bizName}/>

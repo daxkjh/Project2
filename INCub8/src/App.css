@@ -7,25 +7,24 @@
 body {
   background-color: gold;
 }
-a{
+a {
   text-decoration: none;
-  color: whitesmoke
+  color: whitesmoke;
 }
 
 button {
   font-size: calc(10px + 2vmin);
 }
 
-.Navbar{
-position: relative;
-top:0px;
-color: White;
-width: 100%;
-height:150px;
-
+.Navbar {
+  position: relative;
+  top: 0px;
+  color: White;
+  width: 100%;
+  height: 150px;
 }
 
-.nav{
+.nav {
   position: relative;
   display: inline;
   top: -50px;
@@ -33,34 +32,63 @@ height:150px;
   font-size: larger;
 }
 
+.nav:hover {
+  text-shadow: 0 0 7px #b5b0b0;
+  font-weight: bolder;
+}
 
-.searchInput{
+.searchInput {
   width: 20%;
   height: 25px;
   margin-left: 25px;
   margin-right: 20px;
 }
 
-.homeimage1{
-  margin: 20px;
+.homeimage1 {
+  width: 100%;
+}
+
+.image1textcontainer {
+  
+  position: relative;
+  padding: 50px;
+  margin-top: -40%;
+  
+  height: 100%;
+  background: rgba(1, 0, 0, 0.5);
+  
+  text-align: center;
+  
 }
 
 .image1text{
-  display: inline-block;
   position: relative;
-  width: 25%;
-  padding: 25px;
-  top: -100px;
- 
+  top: 50%;
+  width: 60%;
+  color: white;
+  margin-top: 0%;
+  opacity: 1;
+  z-index: 10;
+  line-height: 200%;
+  text-align: left;
+  font-weight: 250;
 }
 
-.homestartbutton{
-  background-color: black;
-  padding: 10px;
-  width: 85px;
+.homestartbutton {
+  position: relative;
+  background-color: gold;
+  padding: 15px;
+  width: 90px;
   border-radius: 20px;
   font-weight: bold;
   text-align: center;
-
+  color: black;
+  z-index: 10;
+  
 }
 
+.homevideo {
+  width: 100%;
+  background-size: cover;
+  z-index: -1;
+}
