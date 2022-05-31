@@ -18,7 +18,7 @@ const Home = () => {
           Starting a Food & Beverage Business is usually the shortest path towards having your own branding.
           At Incubegg, We work with aspiring Entrepreneurs to embark on their journey towards their dream.
         </h3>
-        <Link to={"/getstarted"}>
+        <Link to={"/getstarted/step1"}>
           <div className="homestartbutton">Get Started</div>
         </Link>
       </div>

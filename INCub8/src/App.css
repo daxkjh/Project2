@@ -49,14 +49,11 @@ button {
 }
 
 .image1textcontainer {
-  
   position: relative;
   padding: 50px;
   margin-top: -40%;
-  
   height: 100%;
   background: rgba(1, 0, 0, 0.5);
-  
   text-align: center;
   
 }

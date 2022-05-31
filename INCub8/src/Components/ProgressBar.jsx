@@ -1,3 +1,4 @@
+import React from "react";
 import Stepper from "@mui/material/Stepper";
 
 const ProgressBar = () => {
