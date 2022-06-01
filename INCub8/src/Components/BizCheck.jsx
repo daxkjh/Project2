@@ -4,7 +4,7 @@ import BizCheckList from "./BizCheckList";
 
 const BizCheck = ({ bizName }) => {
   const [bizfile, setBizfile] = useState("");
-  const [display, setDisplay] = useState("Begin your Search")
+  const [display, setDisplay] = useState("Begin your Search");
 
   const fetchData = async () => {
     const response = await fetch(
@@ -15,34 +15,41 @@ const BizCheck = ({ bizName }) => {
     console.log(data);
   };
 
-useEffect(() => {
+  useEffect(() => {
     fetchData();
-},[bizName]);
+  }, [bizName]);
 
   useEffect(() => {
-    if( bizName == "") {
-        setDisplay("Begin Your Search!")
-    } else if (bizfile?.result?.records.length > 0){
-        setDisplay(`Businesses with "` + bizName.toUpperCase() + `" in their entity name : ${bizfile?.result?.total}`)
+    if (bizName == "") {
+      setDisplay("Begin Your Search!");
+    } else if (bizfile?.result?.records.length > 0) {
+      setDisplay(
+        `Entity with "` +
+          bizName.toUpperCase() +
+          `" in their entity name : ${bizfile?.result?.total}`
+      );
     } else {
-        setDisplay("There are no business with that name! Start the first today!")
+      setDisplay(
+        "There are no business with that name! Start the first today!"
+      );
     }
-  },[bizfile]);
-
-
-
-
+  }, [bizfile]);
 
   return (
     <div className="BizCheckContainer">
-      <h1>BizCheck</h1>
+      
       <div className="BizCheckResult">
-       <h3>{display}</h3>
+        <h2>{display}</h2>
       </div>
-      <ol style={{display:'inline-block'}}>
-      {bizfile?.result?.records.map((x,index)=> <BizCheckList key={index} company={x}/>)}
+      <ol style={{ display: "inline-block" }}>
+        {bizfile?.result?.records.map((x, index) => (
+          <BizCheckList key={index} company={x} />
+        ))}
       </ol>
-      <h4>-------  {bizfile?.result?.records.length} of {(bizfile?.result?.total>1)?bizfile?.result?.total:0}  -------</h4>
+      <h4>
+        ------- {bizfile?.result?.records.length} of{" "}
+        {bizfile?.result?.total > 1 ? bizfile?.result?.total : 0} -------
+      </h4>
     </div>
   );
 };

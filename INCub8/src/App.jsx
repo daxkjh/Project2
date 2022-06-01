@@ -6,7 +6,9 @@ import Home from './Pages/Home'
 import GetStarted from './Pages/GetStarted';
 import Plans from './Pages/Plans';
 import Contact from './Pages/Contact';
-import Step1 from './Components/Step1';
+import Step1 from './Pages/Step1';
+import Step2 from './Pages/Step2';
+import Step2a from './Pages/Step2a';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,8 +20,10 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="getstarted" element={<GetStarted />}>
               <Route path="step1" element={<Step1/>}/>
+              <Route path="step2" element={<Step2/>}/>
+              <Route path="step2a" element={<Step2a/>}/>
               </Route>
-            <Route path='plan' element={<Plans />}/>
+            <Route path='plans' element={<Plans />}/>
             <Route path="contacts" element={<Contact />}/>
         </Routes>
     </BrowserRouter>
