@@ -1,4 +1,5 @@
 import * as React from "react";
+import "../App.css"
 import { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
@@ -34,7 +35,7 @@ export default function RecipeReviewCard({ dish }) {
   const [expanded, setExpanded] = React.useState(false);
   const [tagline, setTagline] = useState();
 
-  const tag = selection?.hits?.[0].recipe.healthLabels;
+  const tag = dish?.recipe?.healthLabels;
   
 
   const handleExpandClick = () => {
@@ -42,7 +43,9 @@ export default function RecipeReviewCard({ dish }) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <div style={{padding: '30px'}}>
+    <Card sx={{ maxWidth: 345,
+     }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -54,19 +57,19 @@ export default function RecipeReviewCard({ dish }) {
             <MoreVertIcon />
           </IconButton>
         }
-        title={selection?.hits?.[0]?.recipe?.label}
-        subheader={selection?.hits?.[0]?.recipe?.cuisineType}
+        title={dish?.recipe?.label}
+        subheader={dish?.recipe?.cuisineType}
       />
       <CardMedia
         component="img"
         height="194"
-        image={selection?.hits?.[0]?.recipe?.image}
+        image={dish?.recipe?.image}
         alt="Paella dish"
       />
       <CardContent >
       
-        {tag.map((x) => (
-          <Chip label={x} margin={1}/>
+        {tag.map((x, index) => (
+          <Chip key={index} label={x} margin={1}/>
         ))}
         
       </CardContent>
@@ -118,5 +121,6 @@ export default function RecipeReviewCard({ dish }) {
         </CardContent>
       </Collapse>
     </Card>
+    </div>
   );
 }

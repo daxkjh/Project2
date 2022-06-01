@@ -3,7 +3,7 @@ import "../App.css";
 
 const Navbar = () => {
   return (
-    <div className="Navbar" style={{ backgroundColor: "black" }}>
+    <div className="Navbar" style={{ backgroundColor: "black"}}>
       <Link to={"/"}>
         <img className="Logo" src="https://i.imgur.com/a6JQfBz.png?1" />
       </Link>
