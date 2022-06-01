@@ -48,7 +48,7 @@ const BizCheck = ({ bizName }) => {
       </ol>
       <h4>
         ------- {bizfile?.result?.records.length} of{" "}
-        {bizfile?.result?.total > 1 ? bizfile?.result?.total : 0} -------
+        {bizfile?.result?.total > 0 ? bizfile?.result?.total : 0} -------
       </h4>
     </div>
   );
