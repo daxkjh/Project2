@@ -15,6 +15,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
+import { Box } from "@mui/material";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -27,8 +30,12 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({selection}) {
+export default function RecipeReviewCard({ dish }) {
   const [expanded, setExpanded] = React.useState(false);
+  const [tagline, setTagline] = useState();
+
+  const tag = selection?.hits?.[0].recipe.healthLabels;
+  
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -47,8 +54,8 @@ export default function RecipeReviewCard({selection}) {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={selection?.hits?.[0]?.recipe?.label}
+        subheader={selection?.hits?.[0]?.recipe?.cuisineType}
       />
       <CardMedia
         component="img"
@@ -56,20 +63,20 @@ export default function RecipeReviewCard({selection}) {
         image={selection?.hits?.[0]?.recipe?.image}
         alt="Paella dish"
       />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
+      <CardContent >
+      
+        {tag.map((x) => (
+          <Chip label={x} margin={1}/>
+        ))}
+        
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        {/* <IconButton aria-label="share">
           <ShareIcon />
-        </IconButton>
+        </IconButton> */}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -81,7 +88,7 @@ export default function RecipeReviewCard({selection}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
+          <Typography paragraph><strong>Ingredients:</strong></Typography>
           <Typography paragraph>
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and
             set aside for 10 minutes.
