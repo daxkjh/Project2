@@ -8,7 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const BizCheckList = ({ company }) => {
   console.log("company", company);
   return (
-    <>
+    <div style={{position:'relative', left:"0" }}>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -42,7 +42,7 @@ const BizCheckList = ({ company }) => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-    </>
+    </div>
   );
 };
 export default BizCheckList;

@@ -21,14 +21,14 @@ const Step2 = () => {
           loop
           autoPlay
           muted
-          style={{ width: "30%", zIndex: "-1" }}
+          style={{ width: "35%", zIndex: "-1" }}
         >
           <source src="https://i.imgur.com/yRJYwYj.mp4" type="video/mp4" />
         </video>
         <div
           style={{
             width: "100%",
-            height: "100%",
+            height: "120%",
             position: "absolute",
             top: "0",
             backgroundColor: "rgba(1, 0, 0, 0.5)",
@@ -39,7 +39,7 @@ const Step2 = () => {
               textAlign: "left",
               position: "absolute",
               left: "40%",
-              top: "10%",
+              top: "3%",
             }}
           >
             <h1 style={{ width: "75%", color: "white", marginBottom: "7%" }}>
@@ -61,6 +61,7 @@ const Step2 = () => {
             </h3>
             <Button
               style={{
+                marginLeft:"5%",
                 borderRadius: 20,
                 color: "black",
                 backgroundColor: "gold",

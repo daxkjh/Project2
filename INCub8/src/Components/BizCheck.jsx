@@ -41,7 +41,7 @@ const BizCheck = ({ bizName }) => {
       <div className="BizCheckResult">
         <h2>{display}</h2>
       </div>
-      <ol style={{ display: "inline-block" }}>
+      <ol style={{ display: "inline-block", marginLeft:"-5%"}}>
         {bizfile?.result?.records.map((x, index) => (
           <BizCheckList key={index} company={x} />
         ))}
