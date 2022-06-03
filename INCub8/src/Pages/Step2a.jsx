@@ -133,8 +133,8 @@ const Step2a = () => {
           Search
         </Button>
       </Box>
-      <div style={{ padding: "30px" }}>
-        <Grid container spacing={5}>
+      <div style={{ padding: "30px", position:'relative', }}>
+        <Grid container spacing={5} sx={{margin: '0 auto' }}>
           {selection &&
             selection?.hits.map((x, index) => (
               <RecipeReviewCard key={index} dish={x} />

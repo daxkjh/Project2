@@ -1,20 +1,90 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useState } from "react";
+import { Button, Menu, MenuItem, Typography, Paper } from "@mui/material";
 
 const Navbar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  function handleClick(event) {
+    if (anchorEl !== event.currentTarget) {
+      setAnchorEl(event.currentTarget);
+    }
+  }
+
+  function handleClose() {
+    setAnchorEl(null);
+  }
+
   return (
-    <div className="Navbar" style={{ backgroundColor: "black"}}>
+    <div
+      className="Navbar"
+      style={{ backgroundColor: "black", height: "90px" }}
+    >
       <Link to={"/"}>
         <img className="Logo" src="https://i.imgur.com/a6JQfBz.png?1" />
       </Link>
-      <Link to={"/"}>
-        <div className="nav">Home</div>
+      <Link className="nav" to={"/"}>
+        <Typography variant="h6">Home</Typography>
       </Link>
-      <Link to={"/getstarted/step1"}>
-        <div className="nav">Getting Started</div>
+      <div className="nav">
+        <Typography
+          variant="h6"
+          aria-owns={anchorEl ? "simple-menu" : undefined}
+          aria-haspopup="true"
+          onClick={handleClick}
+          onMouseOver={handleClick}
+          sx={{
+            color: "white",
+          }}
+        >
+          Get Started
+        </Typography>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          MenuListProps={{ onMouseLeave: handleClose }}
+          // sx={{backgroundColor:'black'}}
+        >
+          <Paper
+            sx={{ backgroundColor: "black", color: "white", maxWidth: "100%" }}
+          >
+            <MenuItem
+              component={Link}
+              to="/getstarted/step1"
+              onClick={handleClose}
+            >
+              Business Name Checker
+            </MenuItem>
+            <MenuItem
+              component={Link}
+              to="/getstarted/step2a"
+              onClick={handleClose}
+            >
+              Menu Selection
+            </MenuItem>
+            <MenuItem
+              component={Link}
+              to="/getstarted/summary"
+              onClick={handleClose}
+            >
+              Summary
+            </MenuItem>
+          </Paper>
+        </Menu>
+      </div>
+      {/* <Link to={"/getstarted/step1"}>
+        <div className="nav"><h1>Getting Started</h1></div>
+      </Link> */}
+      <Link className="nav" to={"/plans"}>
+        <Typography variant="h6">Plan</Typography>
       </Link>
-      <Link to={"/plans"}><div className="nav">Plans</div></Link>
-      <Link to={"/contacts"}><div className="nav">Contact Us</div></Link>
+      <Link className="nav" to={"/contacts"}>
+        <Typography variant="h6">Contact Us</Typography>
+      </Link>
     </div>
   );
 };

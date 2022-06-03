@@ -4,8 +4,8 @@ import { Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Step1 = () => {
-  const [bizName, setBizName] = useState("");
+const Step1 = ({bizName, setBizName}) => {
+  // const [bizName, setBizName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
