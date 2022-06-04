@@ -11,6 +11,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {
   Modal,
   Box,
+  Button,
   Card,
   Chip,
   Stack,
@@ -28,15 +29,24 @@ import CardModal from "./CardModal";
 
 
 
-const SummaryCard =({favItem, setMenuShortlist, menuShortlist})=>{
+const SummaryCard =({favItem, setMenuShortlist, menuShortlist,indexNum})=>{
+
+  const handleDelete =(event)=>{
+    const newArr = menuShortlist.filter((x,index)=> index != event.currentTarget.parentNode.parentNode.parentNode.parentNode.id)
+    setMenuShortlist(newArr)
+  console.log("eventtarget", event.currentTarget.parentNode.parentNode.parentNode.parentNode.id)
+    console.log(newArr)
+  // setMenuShortlist()
+  }
     return (
-        <div style={{display:"inline-block"}}>
-        <Card sx={{ width: 400, height: 300 }}>
+        <div style={{display:"inline-block"}} id={indexNum}>
+        <Card sx={{ width: 400, height: 350}}>
         <CardMedia
           component="img"
           height="150"
           image={favItem.recipe.image}
           alt={favItem.recipe.label}
+          
         />
         <CardHeader
           action={
@@ -47,10 +57,11 @@ const SummaryCard =({favItem, setMenuShortlist, menuShortlist})=>{
           titleTypographyProps={{ variant: "h6" }}
           title={favItem.recipe.label}
           subheader={`${favItem.recipe.cuisineType}`.toUpperCase()}
+          sx={{typography:{fontSize:'1rem'}}}
         />
-        {/* <CardContent>
-        
-        </CardContent> */}
+        <CardContent>
+        <Button target="_blank" href={`${favItem?.recipe?.url}`}>See Cooking Instructions</Button>
+        </CardContent>
         {/* <div style={{position:"absolute", bottom: '0px', right:'0px'}}>
         <CardActions disableSpacing>
           

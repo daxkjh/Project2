@@ -12,7 +12,7 @@ const Summary =({menuShortlist, setMenuShortlist})=>{
     return(
         <div>
         <h1>Menu Shortlist</h1>
-        {menuShortlist.map((x, index)=> <SummaryCard key={index} favItem={x} menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>)}
+        {menuShortlist.map((x, index)=> <SummaryCard key={index} indexNum={index} favItem={x} menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>)}
         </div>
     )
 }
