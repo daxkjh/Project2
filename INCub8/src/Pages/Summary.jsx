@@ -5,14 +5,14 @@ import SummaryCard from "../Components/SummaryCard"
 
 
 
-const Summary =({menuShortlist})=>{
+const Summary =({menuShortlist, setMenuShortlist})=>{
 
 
 
     return(
         <div>
         <h1>Menu Shortlist</h1>
-        {menuShortlist.map((x, index)=> <SummaryCard key={index} menuShortlist={x}/>)}
+        {menuShortlist.map((x, index)=> <SummaryCard key={index} favItem={x} menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>)}
         </div>
     )
 }

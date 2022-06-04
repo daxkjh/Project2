@@ -24,16 +24,16 @@ import {
 } from "@mui/material";
 import CardModal from "./CardModal";
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+// const ExpandMore = styled((props) => {
+//   const { expand, ...other } = props;
+//   return <IconButton {...other} />;
+// })(({ theme, expand }) => ({
+//   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+//   marginLeft: "auto",
+//   transition: theme.transitions.create("transform", {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+// }));
 
 export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist }) {
   const [listCheck, setListCheck] = useState()
@@ -51,7 +51,7 @@ export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist
     console.log("menushortlist",menuShortlist)
   }
   console.log(menuShortlist)
-  let x = menuShortlist.some(element => element.recipe.image === dish?.recipe?.image)
+  let x = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
   console.log(x)
 
   return (

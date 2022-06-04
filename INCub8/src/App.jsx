@@ -27,7 +27,7 @@ function App() {
               <Route path="step1" element={<Step1 bizName={bizName} setBizName={setBizName}/>}/>
               <Route path="step2" element={<Step2/>}/>
               <Route path="step2a" element={<Step2a menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>}/>
-              <Route path="Summary" element={<Summary menuShortlist={menuShortlist}/>}/>
+              <Route path="Summary" element={<Summary menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>}/>
               </Route>
             <Route path='plans' element={<Plans />}/>
             <Route path="contacts" element={<Contact />}/>

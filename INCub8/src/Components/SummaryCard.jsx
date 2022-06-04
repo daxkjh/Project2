@@ -7,6 +7,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DeleteIcon from '@mui/icons-material/Delete';
 import {
   Modal,
   Box,
@@ -27,37 +28,36 @@ import CardModal from "./CardModal";
 
 
 
-const SummaryCard =({menuShortlist})=>{
+const SummaryCard =({favItem, setMenuShortlist, menuShortlist})=>{
     return (
-        <>
-        <Card sx={{ width: 240, height: 400 }}>
+        <div style={{display:"inline-block"}}>
+        <Card sx={{ width: 400, height: 300 }}>
         <CardMedia
           component="img"
           height="150"
-          image={menuShortlist.recipe.image}
-          alt={menuShortlist.recipe.label}
+          image={favItem.recipe.image}
+          alt={favItem.recipe.label}
         />
         <CardHeader
           action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
+            <IconButton onClick={handleDelete} aria-label="delete">
+              <DeleteIcon />
             </IconButton>
           }
           titleTypographyProps={{ variant: "h6" }}
-          title={menuShortlist.recipe.label}
-          subheader={`${menuShortlist.recipe.cuisineType}`.toUpperCase()}
-         
+          title={favItem.recipe.label}
+          subheader={`${favItem.recipe.cuisineType}`.toUpperCase()}
         />
-        <CardContent>
+        {/* <CardContent>
         
-        </CardContent>
-        <div style={{position:"absolute", bottom: '0px', right:'0px'}}>
+        </CardContent> */}
+        {/* <div style={{position:"absolute", bottom: '0px', right:'0px'}}>
         <CardActions disableSpacing>
           
         </CardActions>
-        </div>
+        </div> */}
         </Card>
-        </>
+        </div>
     )
 }
 export default SummaryCard
