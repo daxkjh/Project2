@@ -35,18 +35,24 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({ dish }) {
-  const [expanded, setExpanded] = React.useState(false);
-  const [tagline, setTagline] = useState();
-  // const [open, setOpen] = React.useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
+export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist }) {
+  const [listCheck, setListCheck] = useState()
+  
+ const listChecker = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
+ 
+  const handleIconClick=()=>{
+    if( (menuShortlist.some(element => element.recipe.image === dish.recipe.image ) === false )){
+    setMenuShortlist(
+      [...menuShortlist,dish]
+    )}
 
-  const tag = dish?.recipe?.healthLabels;
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    console.log(dish?.recipe?.image)
+    console.log("listchecker",listChecker)
+    console.log("menushortlist",menuShortlist)
+  }
+  console.log(menuShortlist)
+  let x = menuShortlist.some(element => element.recipe.image === dish?.recipe?.image)
+  console.log(x)
 
   return (
     <div style={{ position:"relative", padding: "5px" }}>
@@ -69,14 +75,12 @@ export default function RecipeReviewCard({ dish }) {
          
         />
         <CardContent>
-          {/* <Typography variant="subtitle1">
-            {`${dish?.recipe?.dishType}`.toUpperCase()}
-          </Typography> */}
+        
         </CardContent>
         <div style={{position:"absolute", bottom: '0px', right:'0px'}}>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+          <IconButton aria-label="add to favorites" onClick={handleIconClick}>
+            {(menuShortlist.some(element => element.recipe.image === dish.recipe.image)) ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteIcon />}
           </IconButton>
         </CardActions>
         </div>

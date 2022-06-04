@@ -16,6 +16,7 @@ export const FavsContext = createContext();
 
 function App() {
   const [bizName, setBizName] = useState("");
+  const [menuShortlist, setMenuShortlist] = useState([])
 
   return (
     <div className="App">
@@ -25,8 +26,8 @@ function App() {
             <Route path="getstarted" element={<GetStarted />}>
               <Route path="step1" element={<Step1 bizName={bizName} setBizName={setBizName}/>}/>
               <Route path="step2" element={<Step2/>}/>
-              <Route path="step2a" element={<Step2a/>}/>
-              <Route path="Summary" element={<Summary/>}/>
+              <Route path="step2a" element={<Step2a menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>}/>
+              <Route path="Summary" element={<Summary menuShortlist={menuShortlist}/>}/>
               </Route>
             <Route path='plans' element={<Plans />}/>
             <Route path="contacts" element={<Contact />}/>

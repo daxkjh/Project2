@@ -26,7 +26,16 @@ const Navbar = () => {
         <img className="Logo" src="https://i.imgur.com/a6JQfBz.png?1" />
       </Link>
       <Link className="nav" to={"/"}>
-        <Typography variant="h6">Home</Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            "&:hover": {
+              color: "gold",
+            },
+          }}
+        >
+          Home
+        </Typography>
       </Link>
       <div className="nav">
         <Typography
@@ -36,26 +45,37 @@ const Navbar = () => {
           onClick={handleClick}
           onMouseOver={handleClick}
           sx={{
-            color: "white",
+            color: "white"
           }}
         >
           Get Started
         </Typography>
+  
         <Menu
           id="simple-menu"
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={handleClose}
           MenuListProps={{ onMouseLeave: handleClose }}
-          // sx={{backgroundColor:'black'}}
+          sx={{"& .MuiPaper-root":{
+            backgroundColor:"black",
+            color:"white",
+            
+          }}}
         >
-          <Paper
-            sx={{ backgroundColor: "black", color: "white", maxWidth: "100%" }}
+           <Paper
+            
           >
             <MenuItem
               component={Link}
               to="/getstarted/step1"
               onClick={handleClose}
+              sx={{
+                fontSize:"large",
+                "&:hover": {
+                  color: "gold",
+                },
+              }}
             >
               Business Name Checker
             </MenuItem>
@@ -63,6 +83,12 @@ const Navbar = () => {
               component={Link}
               to="/getstarted/step2a"
               onClick={handleClose}
+              sx={{
+                fontSize:"large",
+                "&:hover": {
+                  color: "gold",
+                },
+              }}
             >
               Menu Selection
             </MenuItem>
@@ -70,20 +96,35 @@ const Navbar = () => {
               component={Link}
               to="/getstarted/summary"
               onClick={handleClose}
+              sx={{
+                fontSize:"large",
+                "&:hover": {
+                  color: "gold",
+                },
+              }}
             >
               Summary
             </MenuItem>
-          </Paper>
+            </Paper>
         </Menu>
+       
       </div>
       {/* <Link to={"/getstarted/step1"}>
         <div className="nav"><h1>Getting Started</h1></div>
       </Link> */}
       <Link className="nav" to={"/plans"}>
-        <Typography variant="h6">Plan</Typography>
+        <Typography variant="h6"  sx={{
+            "&:hover": {
+              color: "gold",
+            },
+          }}>Plan</Typography>
       </Link>
       <Link className="nav" to={"/contacts"}>
-        <Typography variant="h6">Contact Us</Typography>
+        <Typography variant="h6"  sx={{
+            "&:hover": {
+              color: "gold",
+            },
+          }}>Contact Us</Typography>
       </Link>
     </div>
   );

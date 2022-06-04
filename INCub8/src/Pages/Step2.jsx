@@ -11,10 +11,21 @@ const Step2 = () => {
         size="large"
         component={Link}
         to="/getstarted/step1"
+        sx={{
+          position: "absolute",
+          top: "100px",
+          zIndex: "10",
+          "&.MuiButton-text": {
+            color: "grey",
+          },
+          "&:hover": {
+            color: "gold",
+          },
+        }}
       >
         {"<"} Previous Step
       </Button>
-      <h1>Step 2 : Deciding on Menu</h1>
+
       <div style={{ width: "100%", position: "relative" }}>
         <video
           className="homevideo"
@@ -56,12 +67,14 @@ const Step2 = () => {
               all-day-breakfast eatery, its is recommended to start with menu
               items that has less than 8 ingredients. For more professional
               advice, sign up for our{" "}
-              <strong><Link to={"/plans"}>PREMIUM MEMBERSHIP</Link></strong> and get exclusive
-              newsletters & masterclasses
+              <strong>
+                <Link to={"/plans"}>PREMIUM MEMBERSHIP</Link>
+              </strong>{" "}
+              and get exclusive newsletters & masterclasses
             </h3>
             <Button
               style={{
-                marginLeft:"5%",
+                marginLeft: "5%",
                 borderRadius: 20,
                 color: "black",
                 backgroundColor: "gold",

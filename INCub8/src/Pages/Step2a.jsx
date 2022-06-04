@@ -8,11 +8,12 @@ import zIndex from "@mui/material/styles/zIndex";
 const API_KEY = import.meta.env.VITE_API_KEY;
 const API_ID = import.meta.env.VITE_API_ID;
 
-const Step2a = () => {
+const Step2a = ({menuShortlist, setMenuShortlist}) => {
   const [selection, setSelection] = useState();
   const [searchterm, setSearchterm] = useState("");
   const [cuisine, setCuisine] = useState("American");
   const [mealType, setMealType] = useState("Breakfast")
+  
 
 
 
@@ -137,7 +138,7 @@ const Step2a = () => {
         <Grid container spacing={5} sx={{margin: '0 auto' }}>
           {selection &&
             selection?.hits.map((x, index) => (
-              <RecipeReviewCard key={index} dish={x} />
+              <RecipeReviewCard key={index} dish={x} menuShortlist={menuShortlist} setMenuShortlist={setMenuShortlist}/>
             ))}
         </Grid>
       </div>
