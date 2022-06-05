@@ -38,10 +38,10 @@ import CardModal from "./CardModal";
 export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist }) {
   const [listCheck, setListCheck] = useState()
   
- const listChecker = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
+//  const listChecker = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
  
   const handleIconClick=()=>{
-    if( (menuShortlist.some(element => element.recipe.image === dish.recipe.image ) === false )){
+    if( (menuShortlist.some(element => element.recipe.label === dish.recipe.label ) === false )){
     setMenuShortlist(
       [...menuShortlist,dish]
     )}
@@ -51,7 +51,7 @@ export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist
     console.log("menushortlist",menuShortlist)
   }
   console.log(menuShortlist)
-  let x = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
+  let x = menuShortlist.some(element => element.recipe.label === dish.recipe.label)
   console.log(x)
 
   return (
@@ -79,9 +79,9 @@ export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist
         </CardContent>
         <div style={{position:"absolute", bottom: '0px', right:'0px'}}>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites" onClick={handleIconClick}>
-            {(menuShortlist.some(element => element.recipe.image === dish.recipe.image)) ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteIcon />}
-          </IconButton>
+          {/* <IconButton aria-label="add to favorites" onClick={handleIconClick}> */}
+            {(menuShortlist.some(element => element.recipe.label === dish.recipe.label)) ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteIcon onClick={handleIconClick}/>}
+          {/* </IconButton> */}
         </CardActions>
         </div>
         <div style={{position:"absolute", left: '25%', bottom:"5px"}}>
