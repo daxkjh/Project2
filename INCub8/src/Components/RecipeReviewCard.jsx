@@ -38,7 +38,7 @@ import CardModal from "./CardModal";
 export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist }) {
   const [listCheck, setListCheck] = useState()
   
-//  const listChecker = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
+ const listChecker = menuShortlist.some(element => element.recipe.image === dish.recipe.image)
  
   const handleIconClick=()=>{
     if( (menuShortlist.some(element => element.recipe.label === dish.recipe.label ) === false )){
