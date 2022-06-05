@@ -33,6 +33,13 @@ Business Checker:
   - Takes in a string, returns businesses with name containing string.
   - Let user know if the name they have in mind is not in use and can be registered.
 
+Food Menu planner:
+  - Takes in Search parameters of 'cuisine type', 'meal type', and 'Search term' to generate cards of food.
+  - Can click on card for more details on the ingredients to help in planning of COGS
+  - Can save list of food of interest to be shown to prospective Chef to assist in Hiring the right candidate.
+
+```
+
 App Tree
 
 ─ src
@@ -56,7 +63,7 @@ App Tree
    │  └── Summary.jsx
    └── Contact.jsx
    
-       
+  ```     
 
 
 
@@ -73,18 +80,24 @@ Planned to make Website way more better designed.
 Planned to link ingredient list with shopping api to search food prices.
 Did not link API to generate impressive results.
 Inconsistent styling and coding.
+Did not add pagination to cards results is my biggest regret.
 
 How I could have done better:
 
 Be more productive and not procrastinate in my work. 
+Be more independent in my learning journey.
 Plan better, review more APIs, think through what i should do.
 Learn Tailwind and Bootstrap.
 
 
-Credits
-Class mates from SEI 36 for encouragement
-Simon for helping in unstucking on fav page selection issue
+Credits:
+
+Class mates from SEI 36 for encouragement.
+Simon for helping in unstucking on fav page selection issue.
+Clivan & Brandon for teaching me important aspects of MUI.
+Joseph for blowing my mind on MUI documentation. Also Joseph for influencing my choice to use MUI.
 Wei Wen for helping clear the final BugBear. its the label.
+
 
 API
 this app uses api from data.gov.sg & edamam.com
