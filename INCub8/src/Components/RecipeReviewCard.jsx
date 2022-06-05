@@ -79,9 +79,9 @@ export default function RecipeReviewCard({ dish, menuShortlist, setMenuShortlist
         </CardContent>
         <div style={{position:"absolute", bottom: '0px', right:'0px'}}>
         <CardActions disableSpacing>
-          {/* <IconButton aria-label="add to favorites" onClick={handleIconClick}> */}
+          <IconButton aria-label="add to favorites" onClick={handleIconClick}>
             {(menuShortlist.some(element => element.recipe.label === dish.recipe.label)) ? <FavoriteIcon style={{ color: 'red' }}/> : <FavoriteIcon onClick={handleIconClick}/>}
-          {/* </IconButton> */}
+          </IconButton>
         </CardActions>
         </div>
         <div style={{position:"absolute", left: '25%', bottom:"5px"}}>
