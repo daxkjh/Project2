@@ -7,10 +7,10 @@ import { Button, Menu, MenuItem, Typography, Paper } from "@mui/material";
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  function handleClick(event) {
-    if (anchorEl !== event.currentTarget) {
+  function handleClickNav(event) {
+    // if (anchorEl !== event.currentTarget) {
       setAnchorEl(event.currentTarget);
-    }
+  //   }
   }
 
   function handleClose() {
@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div
       className="Navbar"
-      style={{ backgroundColor: "black", height: "90px" }}
+      style={{ backgroundColor: "black", height: "90px", position:"fixed" }}
     >
       <Link to={"/"}>
         <img className="Logo" src="https://i.imgur.com/a6JQfBz.png?1" />
@@ -42,8 +42,8 @@ const Navbar = () => {
           variant="h6"
           aria-owns={anchorEl ? "simple-menu" : undefined}
           aria-haspopup="true"
-          onClick={handleClick}
-          onMouseOver={handleClick}
+          onClick={handleClickNav}
+          onMouseOver={handleClickNav}
           sx={{
             color: "white"
           }}
@@ -53,10 +53,12 @@ const Navbar = () => {
   
         <Menu
           id="simple-menu"
+          keepMounted
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
+          // open={open}
           onClose={handleClose}
-          MenuListProps={{ onMouseLeave: handleClose }}
+          // MenuListProps={{ onMouseLeave: handleClose }}
           sx={{"& .MuiPaper-root":{
             backgroundColor:"black",
             color:"white",
@@ -112,13 +114,13 @@ const Navbar = () => {
       {/* <Link to={"/getstarted/step1"}>
         <div className="nav"><h1>Getting Started</h1></div>
       </Link> */}
-      <Link className="nav" to={"/plans"}>
+      {/* <Link className="nav" to={"/plans"}>
         <Typography variant="h6"  sx={{
             "&:hover": {
               color: "gold",
             },
           }}>Plan</Typography>
-      </Link>
+      </Link> */}
       <Link className="nav" to={"/contacts"}>
         <Typography variant="h6"  sx={{
             "&:hover": {

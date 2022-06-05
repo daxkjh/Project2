@@ -6,6 +6,7 @@ const Home = () => {
   return (
     <div className="Home">
       <Navbar />
+      <div className="belowNav">
       <div className="homeimage1">
         <video className="homevideo" loop autoPlay muted>
           <source src="https://i.imgur.com/A9Tmjn8.mp4" type="video/mp4" />
@@ -24,7 +25,7 @@ const Home = () => {
       </div>
       </div>
 
-      
+      </div>
     </div>
   );
 };

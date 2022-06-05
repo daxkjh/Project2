@@ -14,7 +14,9 @@ const GetStarted = () => {
   return (
     <div className="GetStarted">
       <Navbar />
+      <div className="belowNav">
       <Outlet />
+      </div>
     </div>
   );
 };

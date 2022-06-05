@@ -16,8 +16,9 @@ const BizCheck = ({ bizName }) => {
   };
 
   useEffect(() => {
+    if(bizName !== ""){
     fetchData();
-  }, [bizName]);
+  }}, [bizName]);
 
   useEffect(() => {
     if (bizName == "") {
