@@ -7,16 +7,6 @@ This project serves as a concept for a platform to help kick start aspiring entr
 Created using React Application and Material UI development as part of General Assembly's Software Engineering Immersive program.
 
 
-What it does?
-
-- user can use the website to check if the business name they have in mind is in use, or available.
-- user can look up the various cuisines and meal type (e.g breakfast, lunch, dinner) and keywords (e.g beef, chicken).
-- user can look into the ingredient list so as to help them in planning for the COGS as well as hiring chef specialising in the cuisine.
-- user can shortlist the dishes to help them plan the menu.
-
-
-
-
 Motivation
 
 Having been a founder of an Education and a Food & Beverage Start-up, i wanted to create a concept of a platform that can help aspiring entrepreneurs take their first step towards building their own dreams.   
